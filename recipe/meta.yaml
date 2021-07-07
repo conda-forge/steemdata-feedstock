@@ -18,7 +18,7 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
 
@@ -35,8 +35,6 @@ test:
     - steemdata
 
   commands:
-    - conda inspect linkages -p $PREFIX steemdata  # [not win]
-    - conda inspect objects -p $PREFIX steemdata   # [osx]
 
 about:
   home: https://github.com/SteemData/steemdata/
