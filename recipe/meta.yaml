@@ -13,12 +13,12 @@ source:
   sha256: {{ sha256|lower }}
 
 build:
-  number: 1002
+  number: 1003
   skip: True  # [py<34]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
 
@@ -35,8 +35,6 @@ test:
     - steemdata
 
   commands:
-    - conda inspect linkages -p $PREFIX steemdata  # [not win]
-    - conda inspect objects -p $PREFIX steemdata   # [osx]
 
 about:
   home: https://github.com/SteemData/steemdata/
